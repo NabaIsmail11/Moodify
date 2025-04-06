@@ -1,0 +1,213 @@
+/* EditProfileModal.css - Spotify-like styling for edit profile modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.edit-profile-modal {
+  background-color: #282828;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  color: white;
+  box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 24px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: #b3b3b3;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.close-button:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.profile-image-editor {
+  display: flex;
+  justify-content: center;
+  padding: 32px 0;
+}
+
+.profile-image-container {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.profile-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.profile-image-container:hover .image-overlay {
+  opacity: 1;
+}
+
+.edit-icon {
+  margin-bottom: 8px;
+  color: white;
+}
+
+.image-overlay span {
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+form {
+  padding: 0 24px 24px;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+input[type="text"] {
+  width: 100%;
+  background-color: #3E3E3E;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: white;
+  padding: 12px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #1DB954;
+  box-shadow: 0 0 0 2px rgba(29, 185, 84, 0.3);
+}
+
+.input-description {
+  color: #b3b3b3;
+  font-size: 0.75rem;
+  margin-top: 8px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.cancel-button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 32px;
+  border-radius: 23px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.cancel-button:hover {
+  border-color: white;
+  transform: scale(1.04);
+}
+
+.save-button {
+  background-color: #1DB954;
+  color: black;
+  border: none;
+  padding: 8px 32px;
+  border-radius: 23px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.save-button:hover {
+  background-color: #1ed760;
+  transform: scale(1.04);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .edit-profile-modal {
+    width: 90%;
+  }
+  
+  .profile-image-container {
+    width: 150px;
+    height: 150px;
+  }
+}
