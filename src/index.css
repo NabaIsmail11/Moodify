@@ -1,0 +1,29 @@
+:root {
+  --spotify-black: #121212;
+  --spotify-dark-gray: #181818;
+  --spotify-medium-gray: #282828;
+  --spotify-light-gray: #b3b3b3;
+  --spotify-white: #ffffff;
+  --spotify-green: #1ed760;
+  
+  /* Mood colors */
+  --happy-color: #1ed760;      /* Spotify green */
+  --sad-color: #4e62e2;        /* Blue */
+  --energetic-color: #ff5e62;  /* Red-orange */
+  --calm-color: #b39ddb;       /* Light purple */
+  --romantic-color: #e91e63;   /* Pink */
+  --focus-color: #1db9c3;      /* Teal */
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

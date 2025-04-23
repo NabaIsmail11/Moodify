@@ -1,0 +1,70 @@
+.moods-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.mood-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  background-color: #181818;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.mood-button:hover {
+  background-color: #282828;
+  transform: scale(1.04);
+}
+
+.mood-button.selected {
+  transform: scale(1.08);
+}
+
+.mood-emoji {
+  font-size: 42px;
+  margin-bottom: 16px;
+}
+
+.mood-name {
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.selected-feedback {
+  margin-top: 32px;
+  padding: 20px;
+  background-color: #181818;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.5s ease;
+}
+
+.selected-text {
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+
+.redirect-text {
+  color: #b3b3b3;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Loading animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
