@@ -155,7 +155,7 @@ const styles = {
   },
   subtitle: {
     color: '#b3b3b3',
-    fontSize: '1rem',
+    fontSize: '16px',
     marginTop: '0',
   },
   form: {
@@ -170,13 +170,13 @@ const styles = {
   },
   label: {
     color: 'white',
-    fontSize: '0.875rem',
+    fontSize: '14px',
     fontWeight: '700',
     marginBottom: '8px',
   },
   input: {
     padding: '14px 16px',
-    fontSize: '1rem',
+    fontSize: '16px',
     borderRadius: '4px',
     border: 'none',
     transition: 'all 0.3s',
@@ -188,7 +188,7 @@ const styles = {
     padding: '14px',
     width: '100%',
     marginTop: '20px',
-    fontSize: '1rem',
+    fontSize: '16px',
   },
   errorAlert: {
     backgroundColor: 'rgba(255, 81, 47, 0.2)',
@@ -196,7 +196,7 @@ const styles = {
     padding: '12px',
     borderRadius: '4px',
     marginBottom: '20px',
-    fontSize: '0.875rem',
+    fontSize: '14px',
     textAlign: 'left',
   },
   footer: {
@@ -204,8 +204,9 @@ const styles = {
   },
   footerText: {
     color: '#b3b3b3',
-    fontSize: '0.875rem',
+    fontSize: '14px',
   },
 };
+
 
 export default Signup;
