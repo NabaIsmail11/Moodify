@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root {
   --spotify-black: #121212;
   --spotify-dark-gray: #181818;
@@ -14,6 +15,8 @@
   --romantic-color: #e91e63;   /* Pink */
   --focus-color: #1db9c3;      /* Teal */
 }
+=======
+>>>>>>> e43258c492f1a855868c46e4f8fc801ba9d6c1c2
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
