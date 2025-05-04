@@ -1,4 +1,3 @@
-// utils/lastfmApi.js
 import axios from 'axios';
 import dotenv from 'dotenv';
 
@@ -10,12 +9,10 @@ class LastFmAPI {
     this.baseURL = 'https://ws.audioscrobbler.com/2.0/';
     this.apiKey = process.env.LASTFM_API_KEY;
     
-    // Check if API key is defined
     if (!this.apiKey) {
       console.error('LastFM API key is missing. Please set LASTFM_API_KEY in your .env file');
     }
     
-    // Cache to optimize API calls
     this.cache = {};
     this.cacheExpiry = 3600000; // 1 hour in milliseconds
   }
@@ -23,10 +20,8 @@ class LastFmAPI {
   // Helper method for making Last.fm API calls
   async makeRequest(method, params = {}) {
     try {
-      // Create a cache key based on the method and params
       const cacheKey = `${method}_${JSON.stringify(params)}`;
       
-      // Check cache first
       if (
         this.cache[cacheKey] &&
         this.cache[cacheKey].timestamp > Date.now() - this.cacheExpiry
@@ -44,7 +39,6 @@ class LastFmAPI {
         }
       });
       
-      // Store response in cache
       this.cache[cacheKey] = {
         timestamp: Date.now(),
         data: response.data
@@ -57,7 +51,6 @@ class LastFmAPI {
     }
   }
 
-  // Get track information by name and artist
   async getTrackInfo(track, artist) {
     try {
       const data = await this.makeRequest('track.getInfo', { track, artist });
@@ -162,7 +155,6 @@ class LastFmAPI {
       return '';
     }
     
-    // Try to get larger image first (index 3 or 2)
     if (images[3] && images[3]['#text']) {
       return images[3]['#text'];
     }
@@ -171,7 +163,6 @@ class LastFmAPI {
       return images[2]['#text'];
     }
     
-    // Fall back to any available image
     for (const img of images) {
       if (img && img['#text']) {
         return img['#text'];
@@ -181,7 +172,6 @@ class LastFmAPI {
     return '';
   }
   
-  // Format duration from milliseconds to MM:SS
   formatDuration(ms) {
     if (!ms) return '0:00';
     
