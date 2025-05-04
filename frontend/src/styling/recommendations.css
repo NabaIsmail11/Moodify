@@ -1,0 +1,197 @@
+/* recommendations.css - Styled to match dashboard.css */
+.recommendations-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px 32px;
+  background-color: #121212;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6) 0%, #121212 100%);
+  min-height: 100vh;
+  color: white;
+  font-family: 'Circular', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Header styles */
+.recommendations-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: 16px 0;
+}
+
+.recommendations-header h1 {
+  color: white;
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.recommendations-header button {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: 1px solid transparent;
+  padding: 8px 16px;
+  border-radius: 23px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.3s;
+  letter-spacing: 0.25px;
+}
+
+.recommendations-header button:hover {
+  border-color: #727272;
+  transform: scale(1.04);
+}
+
+/* Recommendations list */
+.recommendations-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+.song-card {
+  background-color: #181818;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: background-color 0.3s;
+  padding: 16px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.song-card:hover {
+  background-color: #282828;
+}
+
+.song-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.song-info {
+  padding: 0;
+}
+
+.song-info h3 {
+  margin: 0 0 4px 0;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.song-info p {
+  margin: 0 0 8px 0;
+  color: #b3b3b3;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.song-info span {
+  color: #b3b3b3;
+  font-size: 0.75rem;
+}
+
+/* Play button overlay for song cards */
+.song-card {
+  position: relative;
+}
+
+.song-card .play-button {
+  position: absolute;
+  bottom: 80px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  background-color: #1DB954;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.3s;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+}
+
+.song-card:hover .play-button {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.play-button:hover {
+  transform: scale(1.06);
+  background-color: #1ed760;
+}
+
+.play-icon {
+  color: black;
+  font-size: 18px;
+  margin-left: 2px;
+}
+
+/* Loading state */
+p:only-child {
+  text-align: center;
+  padding: 48px;
+  color: #b3b3b3;
+  font-size: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .recommendations-page {
+    padding: 16px;
+  }
+  
+  .recommendations-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .recommendations-header h1 {
+    margin-bottom: 16px;
+  }
+  
+  .recommendations-header button {
+    margin-bottom: 16px;
+  }
+  
+  .recommendations-list {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+  }
+}
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border-left-color: #09f;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
