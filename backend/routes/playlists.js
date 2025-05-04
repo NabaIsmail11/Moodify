@@ -9,7 +9,7 @@ import {
   removeSongFromPlaylist,
   getUserProfile,
   updateUserActivity
-} from '../controllers/playlistcontroller.js';
+} from '../controllers/userplaylistcontroller.js';
 import { authenticateUser } from '../middleware/auth.js';
 
 const router = express.Router();
