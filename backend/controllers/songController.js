@@ -1,4 +1,3 @@
-// controllers/songController.js
 import { StatusCodes } from 'http-status-codes';
 import LastFmAPI from '../utils/lastfmAPI.js';
 import DeezerAPI from '../utils/deezerAPI.js';
