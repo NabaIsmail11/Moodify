@@ -10,6 +10,16 @@ import {
   getUserProfile,
   updateUserActivity
 } from '../controllers/userplaylistcontroller.js';
+  import {getFeaturedPlaylists,
+  getPlaylistDetails,
+  createPlaylist,
+  updatePlaylist,
+  deletePlaylist,
+  getUserPlaylists,
+  addSongToPlaylist,
+  removeSongFromPlaylist
+} from '../controllers/playlistController.js';
+
 import { authenticateUser } from '../middleware/auth.js';
 
 const router = express.Router();
@@ -30,5 +40,21 @@ router.route('/:id')
 
 router.post('/:id/songs', addSongToPlaylist);
 router.delete('/:id/songs/:songId', removeSongFromPlaylist);
+
+// Public routes
+router.get('/featured', getFeaturedPlaylists);
+
+// Route to get user playlists - must come before '/:id' route to avoid conflict
+router.get('/user/:userId', authenticateUser, getUserPlaylists);
+
+// Create new playlist
+router.post('/', authenticateUser, createPlaylist);
+
+// Routes with playlist ID
+router.get('/:id', getPlaylistDetails);
+router.put('/:id', authenticateUser, updatePlaylist);
+router.delete('/:id', authenticateUser, deletePlaylist);
+router.post('/:id/songs', authenticateUser, addSongToPlaylist);
+router.delete('/:id/songs/:songId', authenticateUser, removeSongFromPlaylist);
 
 export default router;
